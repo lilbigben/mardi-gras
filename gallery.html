@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<style>
+    body {
+        font-family: 'Pattaya'; 
+font-family: 'Henny Penny';
+font-family: 'Roboto';
+        margin: 0;
+        background-image: url(https://previews.123rf.com/images/kannaa123rf/kannaa123rf1701/kannaa123rf170100062/69992733-bright-abstract-dot-mardi-gras-pattern-on-white-background-vector-illustration-for-holiday-design-ca.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .row>.column {
+        padding: 8px;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: black;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .mySlides {
+        display: none;
+    }
+
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    img {
+        margin-bottom: -4px;
+    }
+
+    .caption-container {
+        text-align: center;
+        background-color: black;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+    img.hover-shadow {
+        transition: 0.3s;
+    }
+
+    .hover-shadow:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #9453A6;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #8CBF3F;
+        color: white;
+    }
+
+    .footer {
+    padding: 20px;
+    text-align: center;
+    background: #9453A6;
+}
+.foot {
+    color: #0d0d0d;
+}
+</style>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="./projectmardi.html" target="blank">Home</a>
+        <a href="./about.html" target="blank">About</a>
+        <a href="./FAQs.html" target="blank">FAQs</a>
+        <a href="./contact.html" target="blank">Contact</a>
+        <img src="https://beyond.hackampus.com/canvas/general/general-cjQAi-2021.02.08.08.09.59-logo2021.png" style="width:50px"
+            alt="mardi gras logo">
+    </div>
+
+    <h1 style="text-align:center">Gallery Gras</h1>
+
+    <div class="row">
+        <div class="column">
+            <img src="https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc5MDgwMjU4MDUzNDQ5/mardi-gras-mask-and-beads.jpg"
+                style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="https://i0.wp.com/travelbamerica.com/wp-content/uploads/2020/04/mardi-gras-Louisiana.jpg?ssl=1"
+                style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/MondoKayo07StChasC.jpg" style="width:100%"
+                onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="https://cdn1.tropicalsky.co.uk/images/800x600/new-orleans-mardi-gras-celebrations.jpg"
+                style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="https://assets3.thrillist.com/v1/image/3057646/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70"
+                style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="https://d.newsweek.com/en/full/1568651/mardi-gras-new-orleans-2015.jpg?w=1600&h=1200&q=88&f=732cbed1e6927c79d70bc243f7f7e508"
+                style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_560,q_60,w_560/v1/clients/neworleans/NOTMC_51804_a7990f20-a22a-4c0e-b2bd-706d3864f061.jpg"
+                style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+            <img src="https://media.istockphoto.com/photos/mardi-gras-decorations-in-new-orleans-picture-id1194907066?k=20&m=1194907066&s=612x612&w=0&h=AAGsAh2Pzz2agyTlyrA0lvieKeSdeGWujvp9DligOis="
+                style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 8</div>
+                <img src="https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc5MDgwMjU4MDUzNDQ5/mardi-gras-mask-and-beads.jpg"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 8</div>
+                <img src="https://i0.wp.com/travelbamerica.com/wp-content/uploads/2020/04/mardi-gras-Louisiana.jpg?ssl=1"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 8</div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/MondoKayo07StChasC.jpg"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 8</div>
+                <img src="https://cdn1.tropicalsky.co.uk/images/800x600/new-orleans-mardi-gras-celebrations.jpg"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 8</div>
+                <img src="https://assets3.thrillist.com/v1/image/3057646/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 8</div>
+                <img src="https://d.newsweek.com/en/full/1568651/mardi-gras-new-orleans-2015.jpg?w=1600&h=1200&q=88&f=732cbed1e6927c79d70bc243f7f7e508"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">7 / 8</div>
+                <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_560,q_60,w_560/v1/clients/neworleans/NOTMC_51804_a7990f20-a22a-4c0e-b2bd-706d3864f061.jpg"
+                    style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">8 / 8</div>
+                <img src="https://media.istockphoto.com/photos/mardi-gras-decorations-in-new-orleans-picture-id1194907066?k=20&m=1194907066&s=612x612&w=0&h=AAGsAh2Pzz2agyTlyrA0lvieKeSdeGWujvp9DligOis="
+                    style="width:100%">
+            </div>
+
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+
+            <div class="column">
+                <img class="demo cursor"
+                    src="https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc5MDgwMjU4MDUzNDQ5/mardi-gras-mask-and-beads.jpg"
+                    style="width:100%" onclick="currentSlide(1)" alt="Mardi gras">
+            </div>
+            <div class="column">
+                <img class="demo cursor"
+                    src="https://i0.wp.com/travelbamerica.com/wp-content/uploads/2020/04/mardi-gras-Louisiana.jpg?ssl=1"
+                    style="width:100%" onclick="currentSlide(2)" alt="Mardi gras">
+            </div>
+            <div class="column">
+                <img class="demo cursor"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3b/MondoKayo07StChasC.jpg" style="width:100%"
+                    onclick="currentSlide(3)" alt="Mardi gras">
+            </div>
+            <div class="column">
+                <img class="demo cursor"
+                    src="https://cdn1.tropicalsky.co.uk/images/800x600/new-orleans-mardi-gras-celebrations.jpg"
+                    style="width:100%" onclick="currentSlide(4)" alt="Mardi gras">
+            </div>
+            <div class="column">
+                <img class="demo cursor"
+                    src="https://assets3.thrillist.com/v1/image/3057646/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70"
+                    style="width:100%" onclick="currentSlide(5)" alt="Mardi gras">
+            </div>
+            <div class="column">
+                <img class="demo cursor"
+                    src="https://d.newsweek.com/en/full/1568651/mardi-gras-new-orleans-2015.jpg?w=1600&h=1200&q=88&f=732cbed1e6927c79d70bc243f7f7e508"
+                    style="width:100%" onclick="currentSlide(6)" alt="Mardi gras">
+            </div>
+            <div class="column">
+                <img class="demo cursor"
+                    src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_560,q_60,w_560/v1/clients/neworleans/NOTMC_51804_a7990f20-a22a-4c0e-b2bd-706d3864f061.jpg"
+                    style="width:100%" onclick="currentSlide(7)" alt="Mardi gras">
+            </div>
+            <div class="column">
+                <img class="demo cursor"
+                    src="https://media.istockphoto.com/photos/mardi-gras-decorations-in-new-orleans-picture-id1194907066?k=20&m=1194907066&s=612x612&w=0&h=AAGsAh2Pzz2agyTlyrA0lvieKeSdeGWujvp9DligOis="
+                    style="width:100%" onclick="currentSlide(8)" alt="Mardi gras">
+            </div>
+        </div>
+    </div>
+
+    <h2 style="text-align: center;">Videos</h2>
+
+    <iframe style="margin: 50px;" width="400" height="300" src="https://www.youtube.com/embed/EkIZwXbSh-Y"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+    <iframe style="margin: 50px;" width="400" height="300" src="https://www.youtube.com/embed/C8mJ2C2cbd0"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+    <iframe style="margin: 50px;" width="400" height="300" src="https://www.youtube.com/embed/PcjLTrUDF3w"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+
+        <div class="footer">
+            <h2 class="foot"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path
+                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                </svg> contact <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path
+                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                </svg></h2>
+            <p class="foot">The site was designed and prepared by "Big Ben"-Building and Designing Business Websites contact us
+                for suggestions and more information.</p>
+            <p class="foot">find us on social media- <br>
+                facebook- big ben ||
+                whatsapp- 057-822**** ||
+                instagram- bigben ||
+                gmail- bigben@*****.com</p>
+        </div>
+
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+
+@media (max-width:600px) {
+
+    form fieldset div.formfields>.half,
+    form fieldset div.formfields>.third,
+    form fieldset div.formfields>.quarter {
+        flex-basis: 100%;
+    }
+}
+
+form fieldset div.formfields input {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: white;
+    padding: 0 0 0 0.6em;
+    box-shadow: 2px 9px 6px -7px rgba(0, 0, 0, 0.2);
+    border-radius: 0.15em;
+    line-height: normal;
+    height: 2.5em;
+    -webkit-appearance: none;
+}
+
+form fieldset div.formfields select {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: white;
+    padding: 0 0 0 0.6em;
+    box-shadow: 2px 9px 6px -7px rgba(0, 0, 0, 0.2);
+    border-radius: 0.15em;
+    line-height: normal;
+    height: 2.5em;
+}
+
+form fieldset div.formfields textarea {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: white;
+    padding: 0.6em 2.5em 0.6em 0.6em;
+    box-shadow: 2px 9px 6px -7px rgba(0, 0, 0, 0.2);
+    border-radius: 0.15em;
+    line-height: 1.4em;
+    resize: vertical;
+    -webkit-appearance: none;
+}
+
+form fieldset div.formfields button {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 1.7em 0 0.6em;
+    box-shadow: 2px 9px 6px -7px rgba(0, 0, 0, 0.2);
+    border-radius: 0.15em;
+    line-height: 1em;
+    height: 2em;
+    text-align: left;
+}
+
+form fieldset div.formfields label.datewrap {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    background-color: white;
+    padding: 0 0 0 0.6em;
+    box-shadow: 2px 9px 6px -7px rgba(0, 0, 0, 0.2);
+    border-radius: 0.15em;
+    line-height: normal;
+    height: 2.5em;
+    color: #A8A8A8;
+}
+
+form fieldset div.formfields label.datewrap input {
+    background-color: initial;
+    box-shadow: none;
+    color: black;
+    padding: 0 0 0 0.3em;
+}
+
+form fieldset div.formfields label.datewrap input[type=date] {
+    height: initial;
+}
+
+form fieldset div.formfields label.datewrap select {
+    background-color: initial;
+    box-shadow: none;
+    color: black;
+    padding: 0 0 0 0.3em;
+}
+
+form fieldset div.formfields button {
+    cursor: pointer;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    background-color: #498612;
+    color: white;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.43);
+    position: relative;
+}
+
+form fieldset div.formfields button:after {
+    content: "\f054";
+    font-family: 'Font Awesome 5 Pro', FontAwesome;
+    position: absolute;
+    right: 0.6em;
+    top: calc(50% - 0.5em);
+    height: 1em;
+}
+
+form fieldset div.formfields label.datewrap input[type="checkbox"] {
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    margin-right: 0.6em;
+    border: 2px solid black;
+}
+
+form fieldset div.formfields label.datewrap input[type="checkbox"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    display: block;
+    font-family: 'Font Awesome 5 Pro', FontAwesome;
+    font-size: 1.2em;
+    line-height: 1em;
+    margin: -0.275em 0em 0em -0.1em;
+    text-shadow: 0 2px white, 0 -2px white;
+    font-weight: bold;
+}
+
+form fieldset div.formfields label.datewrap input[type="checkbox"]:checked::before {
+    content: "\F00C";
+}
+
+form fieldset div.formfields label.datewrap span {
+    color: black;
+    white-space: normal;
+}
